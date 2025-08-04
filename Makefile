@@ -11,6 +11,10 @@ docker:
 	--build-arg DEST_DIR=${DEST_DIR} \
 	--build-arg VERSION=${VERSION} \
 	--build-arg GOPROXY=https://goproxy.cn,direct \
+	--build-arg http_proxy=http://172.16.80.252:3128 \
+	--build-arg https_proxy=http://172.16.80.252:3128 \
+	--build-arg HTTP_PROXY=http://172.16.80.252:3128 \
+	--build-arg HTTPS_PROXY=http://172.16.80.252:3128 \
 	. -f=docker/Dockerfile -t ${IMG_TAG}
 
 dockerwithlib:
